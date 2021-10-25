@@ -7,7 +7,7 @@ const HIDDEN = "hidden";
 const USERNAME = "username";
 const localStorageUsername = localStorage.getItem(USERNAME);
 
-const handleSubmit = (event) => {
+const handleLoginForm = (event) => {
   event.preventDefault();
   username.innerHTML = `Hello✋ ${loginInput.value}`;
   localStorage.setItem(USERNAME, loginInput.value);
@@ -17,7 +17,7 @@ const handleSubmit = (event) => {
 
 if (localStorageUsername === null) {
   loginForm.classList.remove(HIDDEN);
-  loginForm.addEventListener("submit", handleSubmit);
+  loginForm.addEventListener("submit", handleLoginForm);
 } else {
   username.classList.remove(HIDDEN);
   username.innerHTML = `Hello✋ ${localStorageUsername}`;
