@@ -2,14 +2,15 @@ const todoForm = document.getElementById("todo-form");
 const todoInput = document.getElementById("todo-input");
 const todoList = document.getElementById("todo-list");
 
-const todos = [];
+let todos = [];
 const TODO = "todo";
 const localStorageTodo = localStorage.getItem(TODO);
 
-const addTodo = (todoText) => {
+const addTodo = ({ id, text }) => {
   const li = document.createElement("li");
   const button = document.createElement("button");
-  li.innerText = todoText;
+  li.id = id;
+  li.innerText = text;
   button.innerText = "❌";
   button.addEventListener("click", deleteTodo);
   li.appendChild(button);
@@ -18,6 +19,8 @@ const addTodo = (todoText) => {
 
 const deleteTodo = (event) => {
   const parentElement = event.target.parentElement;
+  const parentElementId = parentElement.id;
+
   parentElement.remove();
 };
 
@@ -33,8 +36,9 @@ const handleTodoForm = (event) => {
   event.preventDefault();
   const todoText = todoInput.value;
   todoInput.value = "";
-  addTodo(todoText);
-  todoArray.push(todoText);
+  const newTodoObject = { id: Date.now(), text: todoText };
+  addTodo(newTodoObject);
+  todos.push(newTodoObject);
   saveTodo();
 };
 
