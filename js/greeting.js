@@ -14,6 +14,7 @@ const handleLoginForm = (event) => {
   localStorage.setItem(USERNAME, loginInput.value);
   loginForm.classList.add(HIDDEN);
   username.classList.remove(HIDDEN);
+  formTodo.classList.remove(HIDDEN);
 };
 
 if (localStorageUsername === null) {

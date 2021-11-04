@@ -40,7 +40,6 @@ const quotes = [
     author: "Sheda Savage",
   },
 ];
-
 const quote = document.querySelector("#quote");
 const author = document.querySelector("#author");
 
@@ -50,4 +49,6 @@ const handleQuote = () => {
   author.innerHTML = quotes[randomNumber].author;
 };
 
-handleQuote();
+if (quotes) {
+  handleQuote();
+}

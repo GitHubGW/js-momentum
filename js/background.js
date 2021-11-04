@@ -7,4 +7,6 @@ const handleBackground = () => {
   document.body.appendChild(img);
 };
 
-handleBackground();
+if (images) {
+  handleBackground();
+}

@@ -2,9 +2,9 @@ const todoForm = document.getElementById("todo-form");
 const todoInput = document.getElementById("todo-input");
 const todoList = document.getElementById("todo-list");
 
-let todos = [];
-const TODO = "todo";
-const localStorageTodo = localStorage.getItem(TODO);
+let todosArray = [];
+const TODOS = "todos";
+const localStorageTodo = localStorage.getItem(TODOS);
 
 const addTodo = ({ id, text }) => {
   const li = document.createElement("li");
@@ -19,17 +19,20 @@ const addTodo = ({ id, text }) => {
 
 const deleteTodo = (event) => {
   const parentElement = event.target.parentElement;
-  const parentElementId = parentElement.id;
-
+  const parentElementId = Number(parentElement.id);
+  const currentLocalStorageTodo = JSON.parse(localStorage.getItem(TODOS));
+  todosArray = currentLocalStorageTodo.filter((todo) => todo.id !== parentElementId);
   parentElement.remove();
+  saveTodo();
 };
 
 const getTodo = () => {
-  JSON.parse(localStorage.getItem("todos"));
+  const allTodos = JSON.parse(localStorage.getItem(TODOS));
+  allTodos.forEach(addTodo);
 };
 
 const saveTodo = () => {
-  localStorage.setItem("todos", JSON.stringify(todos));
+  localStorage.setItem(TODOS, JSON.stringify(todosArray));
 };
 
 const handleTodoForm = (event) => {
@@ -38,7 +41,7 @@ const handleTodoForm = (event) => {
   todoInput.value = "";
   const newTodoObject = { id: Date.now(), text: todoText };
   addTodo(newTodoObject);
-  todos.push(newTodoObject);
+  todosArray.push(newTodoObject);
   saveTodo();
 };
 

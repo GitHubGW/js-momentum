@@ -7,7 +7,6 @@ const handleClock = () => {
   const seconds = date.getSeconds();
   const parsedMinutes = String(minutes).padStart(2, "0");
   const parsedSeconds = String(seconds).padStart(2, "0");
-
   clock.innerHTML = `${hours}:${parsedMinutes}:${parsedSeconds}`;
 };
 
