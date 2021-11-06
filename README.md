@@ -2,7 +2,12 @@
 
 ## 🔗 Demo
 
+https://githubgw.github.io/js-momentum
+
 ## 🖥 Preview
+
+<img src="preview1.png">
+<img src="preview2.png">
 
 ## 🔥 Stack
 
