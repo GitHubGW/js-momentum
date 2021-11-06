@@ -10,7 +10,7 @@ const localStorageUsername = localStorage.getItem(USERNAME);
 
 const handleLoginForm = (event) => {
   event.preventDefault();
-  username.innerHTML = `Hello✋ ${loginInput.value}`;
+  username.innerHTML = `Hello! ${loginInput.value}`;
   localStorage.setItem(USERNAME, loginInput.value);
   loginForm.classList.add(HIDDEN);
   username.classList.remove(HIDDEN);
