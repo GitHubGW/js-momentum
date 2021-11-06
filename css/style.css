@@ -1,3 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css');
+
 .hidden{
   display: none;
+}
+
+img{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  animation: bgImage 1s linear;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+}
+.container{
+  width:500px;
+  text-align: center;
+}
+.js-clock{
+  color:white;
+  font-size: 120px;
+  text-align: center;
+}
+.js-username{
+  color:white;
+  font-size:45px;
+  font-weight: 500;
+  margin-top:25px;
+}
+.quote-container{
+  position: absolute;
+  bottom:30px;
+  left:50%;
+  transform:translate(-50%);
+}
+.quote-container .quote{
+  color:white;
+  font-size:15px;
+  font-weight: 500;
+}
+.quote-container .author{
+  color:white;
+  font-size:14px;
+  font-weight: 500;
+  margin-top:13px;
+}
+.js-loginForm,
+.js-todoForm{
+  margin-top:30px;
+}
+.js-loginForm input,
+.js-todoForm input{
+  border:none;
+  outline: none;
+  background-color: transparent;
+  border-bottom: 2px solid white;
+  color:white;
+  width: 70%;
+  padding-left:20px;
+  padding-bottom: 5px;
+  font-size: 20px;
+  box-sizing: border-box;
+  margin-bottom: 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  letter-spacing: 3px;
+}
+.js-toDoList{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 85px;
+}
+.js-toDoList li{
+  color:white;
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom:10px;
+}
+.js-toDoList li button{
+  border:none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 18px;
+}
+.weather-container{
+  position: absolute;
+  top:20px;
+  right:0;
+  color:white;
+  width:150px;
+}
+.fa-cloud-sun{
+  font-size:45px;
+}
+.js-weather-temp{
+  font-size:25px;
+  margin-left: 10px;
+}
+.js-weather-main{
+  display: block;
+  font-style: normal;
+  font-size: 20px;
+  margin-top:10px;
+}
+.js-weather{
+  position: absolute;
+  top:82px;
+  right:15px;
+  color:white;
+}
+
+@keyframes bgImage{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }

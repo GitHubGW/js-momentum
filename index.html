@@ -7,30 +7,36 @@
     <link rel="shortcut icon" href="images/favicon.png" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="https://vanillacss.com/vanilla.css" />
     <title>Momentum</title>
   </head>
   <body>
-    <h1 id="clock">00:00</h1>
-    <h1 id="username" class="hidden"></h1>
-    <div id="quote-container">
-      <h4 id="quote"></h4>
-      <h4 id="author"></h4>
+    <div class="container">
+      <h1 id="clock" class="js-clock">00:00</h1>
+      <h1 id="username" class="js-username hidden"></h1>
+      <form id="todo-form" class="js-todoForm hidden">
+        <input id="todo-input" type="text" placeholder="Write to do" required />
+      </form>
+      <ul id="todo-list" class="js-toDoList"></ul>
+      <form id="login-form" class="js-loginForm hidden">
+        <input type="text" placeholder="What is your name?" maxlength="20" required />
+      </form>
+      <div id="quote-container" class="quote-container">
+        <h4 id="quote" class="quote"></h4>
+        <h4 id="author" class="author"></h4>
+      </div>
+      <div class="weather-container">
+        <i class="fas fa-cloud-sun"></i>
+        <span class="js-weather-temp"></span>
+        <em class="js-weather-main"></em>
+        <div class="js-weather"></div>
+      </div>
     </div>
-    <form id="todo-form" class="hidden">
-      <input id="todo-input" type="text" placeholder="Write to do" required />
-      <button type="submit">Add</button>
-    </form>
-    <ul id="todo-list"></ul>
-    <form id="login-form" class="hidden">
-      <input type="text" placeholder="What is your name?" maxlength="20" required />
-      <button type="submit">Login</button>
-    </form>
 
     <script src="js/greeting.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/quotes.js"></script>
     <script src="js/background.js"></script>
     <script src="js/todo.js"></script>
+    <script src="js/weather.js"></script>
   </body>
 </html>
